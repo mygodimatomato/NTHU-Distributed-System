@@ -39,6 +39,7 @@ jobs:
         cluster-certificate-authority-data: ${{ secrets.KUBERNETES_CLUSTER_CLIENT_CERTIFICATE_AUTHORITY_DATA }}
         cluster-server: ${{ secrets.KUBERNETES_CLUSTER_SERVER }}
         credentials-token: ${{ secrets.KUBERNETES_CREDENTIALS_TOKEN }}
+        context-namespace: s108062332
 
     - name: run migration job
       uses: ./.github/actions/run-migration
