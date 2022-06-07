@@ -46,7 +46,7 @@ func (s *service) ListComment(ctx context.Context, req *pb.ListCommentRequest) (
 		pbComments = append(pbComments, comment.ToProto())
 	}
 
-	return &pb.ListCommentResponse{Comments: pbComments}, nil
+	return &pb.ListCommentResponse{Comment: pbComments}, nil
 }
 
 /*
