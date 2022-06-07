@@ -99,6 +99,7 @@ func (s *service) UpdateComment(ctx context.Context, req *pb.UpdateCommentReques
 		if errors.Is(err, dao.ErrCommentNotFound) {
 			return nil, ErrCommentNotFound
 		}
+		return nil, err
 	}
 
 	return &pb.UpdateCommentResponse{Comment: comment.ToProto()}, nil
@@ -132,9 +133,8 @@ gRPC TODO:
 2. Return the response.
 */
 func (s *service) DeleteCommentByVideoID(ctx context.Context, req *pb.DeleteCommentByVideoIDRequest) (*pb.DeleteCommentByVideoIDResponse, error) {
-	err := s.commentDAO.DeleteByVideoID(ctx, req.GetVideoId())
-	if err != nil {
-		return nil, ErrCommentNotFound
+	if err := s.commentDAO.DeleteByVideoID(ctx, req.GetVideoId()); err != nil {
+		return nil, err
 	}
 
 	return &pb.DeleteCommentByVideoIDResponse{}, nil
