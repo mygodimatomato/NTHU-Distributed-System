@@ -15,7 +15,7 @@ service Comment {
 	}
 	
 	// gRPC TODO: Complete the following RPC service with correct parameter, return type and gateway option.
-	rpc ListComment(ListCommentResponse) returns (ListCommentResponse) {
+	rpc ListComment(ListCommentRequest) returns (ListCommentResponse) {
 		option (google.api.http) = {
 			get: "/v1/comments/{video_id}"
 			response_body: "*"
