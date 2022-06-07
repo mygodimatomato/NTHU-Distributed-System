@@ -37,7 +37,7 @@ message ListCommentRequest {
 }
 
 message ListCommentResponse {
-	repeated CommentInfo comment = 1;
+	repeated CommentInfo comments = 1;
 }
 
 message UpdateCommentRequest {

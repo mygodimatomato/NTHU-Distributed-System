@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/mygodimatomato/Dropbox/NTHU/110-2/分散式系統/lab/NTHU-Distributed-System'
+rm -rf bin/*
+make: Leaving directory `/Users/mygodimatomato/Dropbox/NTHU/110-2/分散式系統/lab/NTHU-Distributed-System'
+ 
